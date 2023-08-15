@@ -27,6 +27,37 @@ function Content() {
           </button>
         </div>
       </div>
+      <div className="m-6">
+        <div className="text-center mb-10 navFont text-6xl">
+          <h1>
+            Most <span className="text-yellow-400">Effective</span> Exercises{" "}
+            <br /> You Must Try
+          </h1>
+        </div>
+        <form className="mb-12 flex justify-center flex-col">
+          <label
+            htmlFor="default-search"
+            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+          >
+            Search
+          </label>
+          <div className="flex">
+            <input
+              type="search"
+              id="default-search"
+              className="block w-1/2 mx-auto p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white   dark:placeholder-gray-400 dark:text-white "
+              placeholder="Search"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="text-black w-20 mx-auto mt-6 -mb-4 bg-yellow-400 hover:bg-yellow-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-yellow-400 navFont"
+          >
+            Search
+          </button>
+        </form>
+      </div>
       <Cards />
     </div>
   );

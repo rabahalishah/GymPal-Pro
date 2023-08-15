@@ -25,7 +25,7 @@ function Cards() {
   const first20Elements = responseData.slice(0, 20);
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center">
       {first20Elements.map((value, index) => (
         <div className="max-w-sm rounded-lg mt-4 mx-4" key={index}>
           <a href="#">
