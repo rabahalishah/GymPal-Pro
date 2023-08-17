@@ -45,7 +45,7 @@ function Content() {
             <input
               type="search"
               id="default-search"
-              className="block w-1/2 mx-auto p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white   dark:placeholder-gray-400 dark:text-white "
+              className="block w-1/2 mx-auto p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white   dark:placeholder-gray-400 text-black text-xl "
               placeholder="Search"
               required
             />
