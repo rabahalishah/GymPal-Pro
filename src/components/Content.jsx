@@ -1,5 +1,5 @@
 import React from "react";
-import "./navBar.css";
+import "./mainNavigation.css";
 import Cards from "./Cards";
 function Content() {
   return (
@@ -29,7 +29,7 @@ function Content() {
       </div>
       <div className="m-6">
         <div className="text-center mb-10 navFont text-6xl">
-          <h1>
+          <h1 id="search">
             Most <span className="text-yellow-400">Effective</span> Exercises{" "}
             <br /> You Must Try
           </h1>

@@ -1,5 +1,6 @@
 import React from "react";
-import "./navBar.css";
+import "./mainNavigation.css";
+import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <nav className="flex p-5 bg-black items-center">
@@ -12,8 +13,8 @@ function NavBar() {
         <p className="text-yellow-400 text-4xl mr-4 font-bold navFont" >PUMP CLUB</p>
       </div>
       <div className="space-x-4 text-white text-2xl font-light navFont ml-10">
-        <button className="hover:text-yellow-300">Home</button>
-        <button className="hover:text-yellow-300">Exercises</button>
+        <NavLink to="/" className="hover:text-yellow-300">Home</NavLink>
+        <a href="#search" className="hover:text-yellow-300 scroll-smooth">Exercises</a>
       </div>
     </nav>
   );
