@@ -26,6 +26,7 @@ function Detail() {
     
 
     const response = await axios.request(options);
+    // const response = await axios.request(); // this is temporary
     setResponseData(response.data);
   };
 

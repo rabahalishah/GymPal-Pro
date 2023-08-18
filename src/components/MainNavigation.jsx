@@ -1,7 +1,10 @@
 import React from "react";
 import "./mainNavigation.css";
 import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 function NavBar() {
+  const { excerciseId } = useParams();
+  console.log("exeId in main navigation",excerciseId)
   return (
     <nav className="flex p-5 bg-black items-center">
       <div>
@@ -14,7 +17,9 @@ function NavBar() {
       </div>
       <div className="space-x-4 text-white text-2xl font-light navFont ml-10">
         <NavLink to="/" className="hover:text-yellow-300">Home</NavLink>
-        <a href="#search" className="hover:text-yellow-300 scroll-smooth">Exercises</a>
+        {!excerciseId && <a href="#search" className="hover:text-yellow-300 scroll-smooth">Exercises</a>}
+        <NavLink to="/fav" className="hover:text-yellow-300">Favourite</NavLink>
+
       </div>
     </nav>
   );

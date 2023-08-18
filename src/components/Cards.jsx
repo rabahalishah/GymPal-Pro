@@ -5,21 +5,36 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 function Cards() {
   const [responseData, setResponseData] = useState([]);
+
   useEffect(() => {
     fetchData();
   }, []);
 
+  let ids = [];
+
+  function favouriteHandler(event) {
+    console.log("clicked on fav icon");
+    const exerciseId = event.currentTarget.id;
+    console.log("Id of the card is", exerciseId);
+    console.log("The type of Id of the card is", typeof event.currentTarget.id);
+    ids.push(event.currentTarget.id);
+    console.log("Id array", ids);
+
+    localStorage.setItem("ids", JSON.stringify(ids));
+  }
+
   const fetchData = async () => {
     const options = {
-      method: 'GET',
-      url: 'https://exercisedb.p.rapidapi.com/exercises',
+      method: "GET",
+      url: "https://exercisedb.p.rapidapi.com/exercises",
       headers: {
-        'X-RapidAPI-Key': 'cfc72434f0mshad7a4de2db83f5dp1f53bajsncba28eb3912a',
-        'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-      }
+        "X-RapidAPI-Key": "cfc72434f0mshad7a4de2db83f5dp1f53bajsncba28eb3912a",
+        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+      },
     };
 
     const response = await axios.request(options);
+    // const response = await axios.request();
     setResponseData(response.data);
   };
 
@@ -42,7 +57,7 @@ function Cards() {
               Muscle target: {item.target}
             </p>
             <div className="flex gap-x-40">
-              <Link 
+              <Link
                 to={`/detail/${item.id}`}
                 className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-yellow-400 rounded-lg hover:bg-yellow-300 focus:ring-4 focus:outline-none "
               >
@@ -56,7 +71,9 @@ function Cards() {
                   <path stroke="currentColor" d="M1 5h12m0 0L9 1m4 4L9 9" />
                 </svg>
               </Link>
-              <button><FcLike /></button>
+              <button id={item.id} onClick={favouriteHandler}>
+                <FcLike />
+              </button>
             </div>
           </div>
         </div>
