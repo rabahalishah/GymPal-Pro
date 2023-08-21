@@ -19,19 +19,23 @@ function Cards() {
     console.log("The type of Id of the card is", typeof event.currentTarget.id);
     ids.push(event.currentTarget.id);
     console.log("Id array", ids);
+    let unique = [...new Set(ids)];
 
-    localStorage.setItem("ids", JSON.stringify(ids));
+    console.log("unique array from card.js", unique);
+
+    localStorage.setItem("unique ids", JSON.stringify(unique));
   }
 
   const fetchData = async () => {
     const options = {
-      method: "GET",
-      url: "https://exercisedb.p.rapidapi.com/exercises",
+      method: 'GET',
+      url: 'https://exercisedb.p.rapidapi.com/exercises',
       headers: {
-        "X-RapidAPI-Key": "cfc72434f0mshad7a4de2db83f5dp1f53bajsncba28eb3912a",
-        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-      },
+        'X-RapidAPI-Key': 'b62e14c3bcmshbf6193c06a615cbp1018aajsn7a508111c548',
+        'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+      }
     };
+    
 
     const response = await axios.request(options);
     // const response = await axios.request();
